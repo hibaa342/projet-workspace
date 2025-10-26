@@ -1,0 +1,149 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body
+{
+    background-color: rgb(6, 2, 40);
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+.back_header
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.middle
+{
+    display: flex;
+    justify-content: center;
+}
+
+.middle ul
+{
+    color: rgb(118, 118, 152);
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+
+}
+
+.middle li:hover
+{
+    color: rgb(240, 24, 171);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+/* youtube vids*/
+
+.intro
+{
+    color: rgb(190, 102, 165);
+    font-size: 20px;
+    font-style: italic;
+    font-variant:small-caps;
+    display: flex;
+    justify-content: center;
+}
+.three_vids
+{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.cercle
+{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.275);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.onec
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.twoc
+{
+    background-image: url(./assets/images/profile_pics/two.jpg);
+}
+
+.threec
+{
+    background-image: url(./assets/images/profile_pics/two.jpg);
+}
+
+.fourc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.fivec
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.sixc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.sevenc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.eightc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.ninec
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.link
+{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.link p
+{
+    color: blueviolet;
+}
+.pic1 img
+{
+    height: 200px;
+    width: 380px;
+    background-color: rgba(128, 128, 128, 0.19);
+    border-radius: 5%;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
