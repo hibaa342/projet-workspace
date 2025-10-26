@@ -25,25 +25,29 @@ body
 {
     display: flex;
     justify-content: center;
-    gap: 5%;
 }
 
-.middle p
+.middle ul
 {
     color: rgb(118, 118, 152);
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
     font-variant: small-caps;
+    list-style: none;
+    display: flex;
+    gap: 5rem;
 
 }
 
-.middle p:hover
+.middle li:hover
 {
     color: rgb(240, 24, 171);
     transition: 0.4s ease-in-out;
     cursor: pointer;
 }
+
+
 
 /* youtube vids*/
 
