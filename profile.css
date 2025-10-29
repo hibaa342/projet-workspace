@@ -5,8 +5,8 @@
 
 .literata-<uniquifier> {
   font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-optical-sizing : auto;
+  font-weight : <weight>;
   font-style: normal;
 }
 
@@ -27,24 +27,6 @@ body {
   background-color: #000;       /* fallback */
 }
 
-
-/* 
-body
-{
-    background-color: rgb(6, 2, 40);
-    margin: 0%;
-    padding:0%;
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover;      /* Make image cover the whole screen */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;/* Remove repeats */
-    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
-    height: 100vh;          
-} */
 
 .back_header
 {
