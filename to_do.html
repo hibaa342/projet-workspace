@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="./to_do.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <section class="header">
-
         <div class="logo">
             <!-- <img src="./assets/images/workspace.png" alt="logo"> -->
         </div>
@@ -27,5 +27,46 @@
             </ul>
         </div>
     </section>
+
+    <div class="title">TO DO LIST</div>
+    <div class="todo-container">
+        <ul id="task-list">
+            <li>
+                <input type="checkbox">
+                <input type="text" value="..." class="task-text" />
+            </li>
+    </div>
+
+    <div class="add-task">
+    <input type="text" id="task-input" placeholder="Écris ta tâche ici..." />
+    <button id="add-task-btn">Ajouter</button>
+</div>
+
+<script>
+    const input = document.getElementById("task-input");
+    const button = document.getElementById("add-task-btn");
+    const taskList = document.getElementById("task-list");
+
+    function addTask(taskText) {
+        const li = document.createElement("li");
+        li.innerHTML = `<input type="checkbox"> <input type="text" value="${taskText}" class="task-text" />`;
+        taskList.appendChild(li);
+    }
+
+    button.addEventListener("click", function() {
+        const taskText = input.value.trim();
+        if(taskText !== "") {
+            addTask(taskText);
+            input.value = ""; // vide le champ
+        }
+    });
+
+    input.addEventListener("keypress", function(e) {
+        if(e.key === "Enter") {
+            button.click();
+        }
+    });
+</script>
+
 </body>
 </html>
