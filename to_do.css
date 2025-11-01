@@ -1,10 +1,8 @@
+/* ===== Fonts ===== */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
- 
 .literata-<uniquifier> {
     font-family: "Literata", serif;
     font-optical-sizing: auto;
@@ -12,7 +10,7 @@
     font-style: normal;
 }
 
-/*  Arrière-plan principal avec animation lente */
+/* ===== BODY ===== */
 body {
     height: 100%;
     margin: 0;
@@ -33,67 +31,13 @@ body {
     justify-content: flex-start;
     min-height: 100vh;
     padding-top: 15px;
-
-    animation: fadeInPage 1.8s ease-in-out;
 }
 
-/* background on the page itself */
-body {
-
-    height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  background-image: url('./assets/images/background_img.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; /* stays put when scrolling */
-  background-color: #000;       /* fallback */
-}
-
-
-/* 
-body
-{
-    background-color: rgb(6, 2, 40);
-    margin: 0%;
-    padding:0%;
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover;      /* Make image cover the whole screen */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;/* Remove repeats */
-    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
-    height: 100vh;          
-} */
-
-
-/* Animation de fondu d'apparition */
-@keyframes fadeInPage {
-    from { opacity: 0; transform: scale(1.02); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Animation lente du fond (mouvement subtil) */
-@keyframes bgMove {
-    0% { background-position: center; }
-    50% { background-position: center 20px; }
-    100% { background-position: center; }
-}
-body {
-    animation: fadeInPage 1.5s ease-in-out, bgMove 10s ease-in-out infinite alternate;
-}
-
-/* Menu du milieu */
+/* ===== MENU ===== */
 .middle {
     display: flex;
     justify-content: center;
-    animation: fadeInSlow 2s ease-in-out;
+    margin-top: 20px;
 }
 
 .middle ul {
@@ -101,18 +45,16 @@ body {
     gap: 5rem;
 }
 
+.middle li {
+    list-style: none;
+}
 
 .middle a {
     color: rgb(118, 118, 152);
-
-.middle a 
-{
-    color: rgb(213, 213, 223);
-
     font-size: 20px;
     font-weight: bold;
-    
-    list-style: none;
+    font-style: italic;
+    font-variant: small-caps;
     text-decoration: none;
     transition: color 0.4s ease, transform 0.3s ease;
 }
@@ -122,8 +64,7 @@ body {
     transform: scale(1.1);
     cursor: pointer;
 }
-
-/* 🗒️ Titre To Do List */
+/* ===== Titre To Do List avec animation ===== */
 .title {
     background-color: #c4a5ff;
     color: #000;
@@ -135,14 +76,11 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin-top: 50px;
     margin-bottom: 40px;
-    animation: slideDown 1.2s ease-out;
     font-family: "Lobster Two", sans-serif;
-}
-.middle li
-{
-    list-style: none;
-}
 
+    opacity: 0;
+    animation: titleFade 1s ease-out forwards;
+}
 
 .title::after {
     content: "🌸";
@@ -151,13 +89,12 @@ body {
     top: 0;
 }
 
-/* Animation du titre */
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes titleFade {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-/* 📋 Container To Do List */
+/* ===== Container To Do List avec animation ===== */
 .todo-container {
     background-color: #d8b4fe;
     padding: 30px;
@@ -165,18 +102,26 @@ body {
     width: 300px;
     margin-bottom: 50px;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    animation: fadeInUp 1.8s ease-out;
+
+    opacity: 0;
+    animation: containerFade 1s ease-out forwards;
+    animation-delay: 0.3s; /* démarre après le titre */
 }
 
-/* Animation To Do List */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes containerFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
+
+/* ===== Zone d'ajout de tâche avec animation ===== */
 .add-task {
     display: flex;
     margin-top: 15px;
     gap: 10px;
+
+    opacity: 0;
+    animation: addTaskFade 1s ease-out forwards;
+    animation-delay: 0.6s; /* démarre après le container */
 }
 
 .add-task input[type="text"] {
@@ -202,8 +147,12 @@ body {
     background-color: #9333ea;
 }
 
+@keyframes addTaskFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-/* ✅ Liste To Do */
+/* ===== Liste To Do ===== */
 ul {
     list-style: none;
     padding: 0;
@@ -233,10 +182,4 @@ input[type="checkbox"] {
 
 li:last-child {
     border-bottom: none;
-}
-
-/* 🌟 Apparition douce pour le menu et la ToDo */
-@keyframes fadeInSlow {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
