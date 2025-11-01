@@ -27,5 +27,26 @@
             </ul>
         </div>
     </section>
+
+<div class="container">
+  <h1>Notes</h1>
+
+  <textarea id="noteInput" placeholder="Écris ta note ici..."></textarea>
+  <button onclick="saveNote()"> Sauvegarder 💾</button>
+
+  <h2>Mes notes sauvegardées (<span id="noteCount">0</span>)</h2>
+
+  <!-- Exemple statique -->
+  <ul id="noteList">
+    <li>
+      <span>Exemple de note</span>
+      <button class="delete-btn" onclick="deleteNote(0)">🗑 Supprimer</button>
+    </li>
+  </ul>
+</div>
+
+<script src="./notes.js"></script>
+
+
 </body>
 </html>
