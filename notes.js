@@ -31,7 +31,7 @@ function loadNotes() {
       noteText.textContent = note;
 
       const deleteBtn = document.createElement("button");
-      deleteBtn.textContent = "🗑 Supprimer";
+      deleteBtn.textContent = " Supprimer";
       deleteBtn.className = "delete-btn";
       deleteBtn.onclick = () => deleteNote(index);
 
