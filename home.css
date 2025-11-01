@@ -1,61 +1,132 @@
-*{
-    font-family:Arial, Helvetica, sans-serif;
+/* Existing styles (kept for context) */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* background on the page itself */
+body {
+
+    height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-image: url('./assets/images/background_img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* stays put when scrolling */
+  background-color: #000;       /* fallback */
 }
 
 
 
-.literata-<uniquifier> {
-  font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-body
-{
-    background-color: rgb(6, 2, 40);
-    margin: 0%;
-    padding:0%;
+body {
+    /* ... (background styles remain the same) ... */
+    background-color: rgb(6, 2, 40); 
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.back_header
-{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+/* REMOVED: .middle, .middle ul, .middle a styles */
+
+/* --- WELCOME TEXT AND OUTLINE STYLES --- */
+
+.hero-content {
+    text-align: center; 
+    margin-top: 50px; /* Reduced margin since header navigation is gone */
+    padding: 0 20px;
+    color: white;
 }
 
-.middle
-{
-    display: flex;
-    justify-content: center;
-}
-.middle ul
-{
-    display: flex;
-    gap: 5rem;
-}
-.middle a 
-{
-    color: rgb(118, 118, 152);
-    font-size: 20px;
-    font-weight: bold;
-    font-style: italic;
-    font-variant: small-caps;
-    list-style: none;
-    text-decoration: none;
-
-
-}
-
-.middle a:hover
-{
+.main-title {
+    /* ... (Text outline styles remain the same) ... */
+    font-size: 3.5rem;
+    font-weight: 800;
     color: rgb(240, 24, 171);
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 1px rgb(68, 0, 59); 
+
+}
+
+/* --- BOX STYLING (FOR MESSAGE BOX) --- */
+
+.content-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid rgb(255, 0, 119);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.message-box {
+    margin-bottom: 30px;
+}
+.main-message {
+    text-align: center; 
+    font-size: 1.8rem; 
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- NEW BUTTON STYLES --- */
+/* --- NEW CARD STRUCTURE STYLES --- */
+
+.container {
+    display: grid;
+    /* Uses repeat(auto-fit, minmax(300px, 1fr)) for responsive 300px min width */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto; /* Centers the whole container */
+    
+}
+
+.card {
+    /* Base Card/Button Style */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 20px;
+    padding: 30px 20px; /* Increased padding for the description */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Link styling reset */
+    text-decoration: none;
+    display: block; /* Make the entire card clickable */
+    color: white; /* Base text color */
+    
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    /* Purple Shine/Glow Effect (Adjusted from previous button style) */
+    box-shadow: 
+        0 0 15px rgb(240, 24, 171), /* Inner glow using your accent color */
+        0 10px 30px rgba(150, 20, 250, 0.8); /* Stronger vertical shadow/glow */
+}
+
+/* Card Content Styling */
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: rgb(240, 24, 171); /* Your accent color for the title */
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.5px rgb(68, 0, 59); 
+}
+
+.card-desc {
+    display: block; /* Ensure the description is on its own line */
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8); /* Slightly faded white for description */
+    font-style: italic;
+    line-height: 1.4;
 }
