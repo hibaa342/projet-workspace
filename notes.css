@@ -3,9 +3,18 @@
 }
 
 
+.literata-<uniquifier> {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 
 
 /* background on the page itself */
+
+
+
 body {
 
     height: 100%;
@@ -20,7 +29,6 @@ body {
   background-attachment: fixed; /* stays put when scrolling */
   background-color: #000;       /* fallback */
 }
-
 
 .back_header
 {

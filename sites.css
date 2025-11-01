@@ -1,0 +1,171 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.literata-<uniquifier> {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+/* background on the page itself */
+body {
+
+    height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-image: url('./assets/images/background_img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* stays put when scrolling */
+  background-color: #000;       /* fallback */
+
+ 
+}
+
+
+/* 
+body
+{
+    background-color: rgb(6, 2, 40);
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+    background-image: url('your-image.jpg'); /* Replace with your image path */
+    background-size: cover;      /* Make image cover the whole screen */
+    background-position: center; /* Keep it centered */
+    background-repeat: no-repeat;/* Remove repeats */
+    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
+    height: 100vh;          
+} */
+
+.back_header
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.middle
+{
+    display: flex;
+    justify-content: center;
+}
+.middle ul
+{
+    display: flex;
+    gap: 5rem;
+}
+.middle a 
+{
+    color: rgb(213, 213, 223);
+    font-size: 20px;
+    font-weight: bold;
+    
+    list-style: none;
+    text-decoration: none;
+
+
+}
+.middle li
+{
+    list-style: none;
+}
+
+
+.middle a:hover
+{
+    color: rgb(240, 24, 171);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+
+
+
+h1 
+{
+    color: rgb(213, 213, 223);
+    font-size: 20px;
+    font-style: italic;
+    font-family: litearata;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card 
+{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover 
+{
+    transform: translateY(-10px);
+}
+
+.card img 
+{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.card h3 
+{
+    margin: 10px 0;
+}
+
+.card p 
+{
+    font-size: 0.95em;
+    color: #f2f2f2;
+    margin-bottom: 15px;
+}
+
+.card a 
+{
+    text-decoration: none;
+    background: #ff66cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card a:hover 
+{
+    background: #ff33aa;
+}

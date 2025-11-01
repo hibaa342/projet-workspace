@@ -1,0 +1,189 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.literata-<uniquifier> {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+/* background on the page itself */
+body {
+
+    height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-image: url('./assets/images/background_img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* stays put when scrolling */
+  background-color: #000;       /* fallback */
+
+  
+}
+
+.back_header
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.middle
+{
+    display: flex;
+    justify-content: center;
+}
+.middle ul
+{
+    display: flex;
+    gap: 5rem;
+}
+.middle a 
+{
+    color: rgb(213, 213, 223);
+    font-size: 20px;
+    font-weight: bold;
+    
+    list-style: none;
+    text-decoration: none;
+
+
+}
+.middle li
+{
+    list-style: none;
+}
+
+
+.middle a:hover
+{
+    color: rgb(240, 24, 171);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+/* youtube vids*/
+
+.videos a
+{
+    color: rgb(213, 213, 223);
+    text-decoration: none;
+}
+
+.videos a:hover
+{
+    color: rgb(240, 24, 171);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.intro
+{
+    color: rgb(213, 213, 223);
+    font-size: 20px;
+    font-style: italic;
+    font-family: litearata;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.three_vids
+{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.cercle
+{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.275);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.onec
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.twoc
+{
+    background-image: url(./assets/images/profile_pics/two.jpg);
+}
+
+.threec
+{
+    background-image: url(./assets/images/profile_pics/two.jpg);
+}
+
+.fourc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.fivec
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.sixc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.sevenc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.eightc
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.ninec
+{
+    background-image: url(./assets/images/profile_pics/one.jpg);
+}
+
+.link
+{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.link p
+{
+    color: blueviolet;
+}
+.pic1 img
+{
+    height: 200px;
+    width: 380px;
+    background-color: rgba(128, 128, 128, 0.19);
+    border-radius: 5%;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
