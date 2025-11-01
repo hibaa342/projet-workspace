@@ -2,6 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* ===== BODY ===== */
 body {
     margin: 0;
@@ -15,6 +16,51 @@ body {
     background-attachment: fixed;
 }
 
+
+.literata-<uniquifier> {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+/* background on the page itself */
+body {
+
+    height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-image: url('./assets/images/background_img.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; /* stays put when scrolling */
+  background-color: #000;       /* fallback */
+}
+
+
+/* 
+body
+{
+    background-color: rgb(6, 2, 40);
+    margin: 0%;
+    padding:0%;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+    background-image: url('your-image.jpg'); /* Replace with your image path */
+    background-size: cover;      /* Make image cover the whole screen */
+    background-position: center; /* Keep it centered */
+    background-repeat: no-repeat;/* Remove repeats */
+    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
+    height: 100vh;          
+} */
+
+
 /* ===== MENU ===== */
 .middle {
     display: flex;
@@ -25,12 +71,22 @@ body {
     display: flex;
     gap: 5rem;
 }
+
 .middle a {
     color: #d9b3ff;
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
     font-variant: small-caps;
+}
+.middle a 
+{
+    color: rgb(213, 213, 223);
+    font-size: 20px;
+    font-weight: bold;
+    
+    list-style: none;
+
     text-decoration: none;
     transition: 0.3s ease;
 }
@@ -68,6 +124,11 @@ body {
     margin-top: 8px;
     font-size: 1.3rem;
 }
+.middle li
+{
+    list-style: none;
+}
+
 
 /* ===== TABLE ===== */
 table.edt {
