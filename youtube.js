@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navbar.classList.toggle('nav-open');
   });
 
+  // Fermer le menu quand on clique sur un lien (mobile)
   navbar.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       navbar.classList.remove('nav-open');
