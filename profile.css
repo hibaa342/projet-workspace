@@ -1,10 +1,6 @@
 *{
     font-family:Arial, Helvetica, sans-serif;
 }
-
-
-
-
 /* background on the page itself */
 body {
 
@@ -12,7 +8,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   background-image: url('./assets/images/background_img.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -70,7 +65,7 @@ body {
 {
     display: flex;
     justify-content: space-around;
-  padding-top: 8%;
+ margin-top: 8rem;
     
 }
 .pic
@@ -86,37 +81,20 @@ body {
   width: 220px;
   border-radius:50%;
 }
-
 ::placeholder
 {
     color: rgb(199, 31, 87);
     font-family:  "Days One", sans-serif;
-}
-
-.d1 input {
-  width: 220px;     /* Largeur */
-  height: 20px;      /* Hauteur */
-  font-size: 16px;  /* Taille du texte */
-  padding: 8px;     /* Espace intérieur */
-  border-radius: 30px; /* Coins arrondis */
-  border: 4.5px solid #be81b2; /* Bordure */}  
-  .d2 input{
- width: 220px;     /* Largeur */
-  height: 20px;     /* Hauteur */
-  font-size: 16px;  /* Taille du texte */
-  padding: 8px;     /* Espace intérieur */
-  border-radius: 30px; /* Coins arrondis */
-  border: 4.5px solid #caa0c4; /* Bordure */}  
-
-.d3 input{
- width: 220px;     /* Largeur */
+} 
+.d1 input , .d2  input , .d3 input
+{
+   width: 220px;     /* Largeur */
   height: 20px;     /* Hauteur */
   font-size: 16px;  /* Taille du texte */
   padding: 8px;     /* Espace intérieur */
   border-radius: 30px; /* Coins arrondis */
   border: 4.5px solid #caa0c4; /* Bordure */
-
-}  
+}
 .d2 input , .d3 input {
   margin-top: 50px;
    /* Espace entre la 1ère et la 2e ligne */
@@ -124,30 +102,19 @@ body {
 .d1 input, .d2 input, .d3 input {
   margin-right: 40px; /* espace entre prénom et nom */
 }
-.d1 input:focus,
-.d2 input:focus,
-.d3 input:focus {
-  transform: scale(1.1); /* agrandit légèrement */
-  border-color: #ff3da6; /* change la couleur de la bordure */
-  box-shadow: 0 0 15px #ff9ad5; /* effet de lumière autour */
-  background-color: #fff0fa; /* fond plus clair */
-}
+
 .button1 button {
-  background-color: #ff69b4; /* rose doux */
+  background: rgb(90, 4, 61);
   color: white;
-  border: none;
-  padding: 10px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  cursor: pointer;
-  margin-top: 50px;
-  margin-left: 80%;
+  padding: 10px 20px;
+ border: none;
+ cursor: pointer;
+ margin-top: 2rem;
+ margin-left: 30rem;
+ border-radius: 10%;
 }
 
 .button1 button:hover {
-  background-color: #ff85c1; /* rose plus clair au survol */
-  transform: scale(1.05); /* effet zoom léger */
+  background-color: #ff85c1;
+  
 }
