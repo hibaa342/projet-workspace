@@ -11,6 +11,11 @@
 }
 
 
+body.nav-open {
+  overflow: hidden;
+}
+
+
 /* background on the page itself */
 body {
 

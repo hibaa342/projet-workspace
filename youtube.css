@@ -10,6 +10,10 @@
   font-style: normal;
 }
 
+body.nav-open {
+  overflow: hidden;
+}
+
 
 /* background on the page itself */
 body {
@@ -336,16 +340,21 @@ body {
   }
 
   #navbar ul {
-    display: flex !important;
-    position: static;
-    background: none;
-    padding: 0;
-    flex-direction: row;
-    gap: 3rem;
-    box-shadow: none;
-    width: auto;
-    text-align: left;
-  }
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.95);
+  padding: 20px;
+  position: fixed;   /* overlay, not absolute */
+  top: 0;            /* stick to top */
+  right: 0;          /* stick to right */
+  height: 100vh;     /* full screen height */
+  width: 220px;      /* menu width */
+  text-align: right;
+  border-radius: 0 0 0 10px; /* optional rounded corner */
+  z-index: 999;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
 
   #navbar ul li {
     color: inherit;
