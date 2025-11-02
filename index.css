@@ -1,9 +1,7 @@
-/* Existing styles (kept for context) */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* background on the page itself */
 body {
 
     height: 100%;
@@ -15,33 +13,28 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed; /* stays put when scrolling */
-  background-color: #000;       /* fallback */
+  background-attachment: fixed; 
+  background-color: #000;       
 }
 
 
 
 body {
-    /* ... (background styles remain the same) ... */
     background-color: rgb(6, 2, 40); 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* REMOVED: .middle, .middle ul, .middle a styles */
-
-/* --- WELCOME TEXT AND OUTLINE STYLES --- */
 
 .hero-content {
     text-align: center; 
-    margin-top: 50px; /* Reduced margin since header navigation is gone */
+    margin-top: 50px; 
     padding: 0 20px;
     color: white;
 }
 
 .main-title {
-    /* ... (Text outline styles remain the same) ... */
     font-size: 3.5rem;
     font-weight: 800;
     color: rgb(240, 24, 171);
@@ -49,8 +42,6 @@ body {
     -webkit-text-stroke: 1px rgb(68, 0, 59); 
 
 }
-
-/* --- BOX STYLING (FOR MESSAGE BOX) --- */
 
 .content-box {
     max-width: 600px;
@@ -72,12 +63,10 @@ body {
     margin: 0;
 }
 
-/* --- NEW BUTTON STYLES --- */
-/* --- NEW CARD STRUCTURE STYLES --- */
+/*Cards style */
 
 .container {
     display: grid;
-    /* Uses repeat(auto-fit, minmax(300px, 1fr)) for responsive 300px min width */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     padding: 40px;
@@ -104,10 +93,9 @@ body {
 
 .card:hover {
     transform: translateY(-10px);
-    /* Purple Shine/Glow Effect (Adjusted from previous button style) */
     box-shadow: 
-        0 0 15px rgb(240, 24, 171), /* Inner glow using your accent color */
-        0 10px 30px rgba(150, 20, 250, 0.8); /* Stronger vertical shadow/glow */
+        0 0 15px rgb(240, 24, 171),
+        0 10px 30px rgba(150, 20, 250, 0.8);
 }
 
 /* Card Content Styling */
@@ -117,7 +105,7 @@ body {
     font-weight: 800;
     margin-top: 0;
     margin-bottom: 5px;
-    color: rgb(240, 24, 171); /* Your accent color for the title */
+    color: rgb(240, 24, 171); /*accent color for the title */
     text-transform: uppercase;
     -webkit-text-stroke: 0.5px rgb(68, 0, 59); 
 }
@@ -125,7 +113,54 @@ body {
 .card-desc {
     display: block; /* Ensure the description is on its own line */
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8); /* Slightly faded white for description */
+    color: rgba(255, 255, 255, 0.8); 
     font-style: italic;
     line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    
+    .hero-content {
+        margin-top: 30px;
+        padding: 0 10px; 
+    }
+
+    .main-title {
+        font-size: 2.5rem; 
+    }
+
+    .content-box {
+        max-width: 95%; 
+        padding: 15px;
+    }
+
+    .main-message {
+        font-size: 1.2rem; 
+    }
+
+    .container {
+
+        grid-template-columns: 1fr; 
+        
+        gap: 15px; 
+        padding: 20px 15px;
+        margin: 30px auto; 
+    }
+
+    .card {
+        padding: 20px 15px;
+        border-radius: 15px; 
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-desc {
+        font-size: 0.9rem; 
+    }
+    
+     .card:hover {
+        transform: none; 
+    }
 }

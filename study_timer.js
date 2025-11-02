@@ -1,5 +1,3 @@
-// --- Global State Variables ---
-// Initial time is 25 minutes (25 * 60 seconds)
 const INITIAL_STUDY_TIME = 25 * 60; 
 let timeInSeconds = INITIAL_STUDY_TIME;
 let timerInterval = null; // Holds the reference to the setInterval call
@@ -14,26 +12,19 @@ const modeButtons = document.querySelectorAll('.mode-btn');
 
 // --- Helper Functions ---
 
-/**
- * Updates the time display string (e.g., 25:00)
- */
 function updateDisplay() {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
 
-    // Pad single digits with a leading zero (e.g., 5 -> 05)
     const formattedMinutes = String(minutes).padStart(2, '0');
     const formattedSeconds = String(seconds).padStart(2, '0');
 
     timeDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
     
-    // Update the document title for easy viewing when tab is in background
     document.title = `${formattedMinutes}:${formattedSeconds} - Study Timer`;
 }
 
-/**
- * Handles the main countdown logic (runs every second).
- */
+
 function countdown() {
     if (timeInSeconds > 0) {
         timeInSeconds--;

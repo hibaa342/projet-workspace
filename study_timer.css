@@ -2,7 +2,6 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-/* background on the page itself */
 body {
 
     height: 100%;
@@ -14,19 +13,11 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed; /* stays put when scrolling */
-  background-color: #000;       /* fallback */
+  background-attachment: fixed;
+  background-color: #000;       
 }
 
 
-/* 
-.literata-<uniquifier> {
-  font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
- */
 body
 {
     background-color: rgb(6, 2, 40);
@@ -36,11 +27,11 @@ body
 
     margin: 0;
     padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover;      /* Make image cover the whole screen */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;/* Remove repeats */
-    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
+    background-image: url('your-image.jpg'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;          
 } */
 
@@ -89,25 +80,20 @@ body
     cursor: pointer;
 }
 
-/* --- EXISTING CSS (Header, Body) GOES HERE --- */
 
-/* --- NEW CSS FOR TIMER BELOW THE HEADER --- */
-
-/* Main content layout to center the timer below the header */
 .main-content {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Optional: to help vertical positioning */
-    padding-top: 50px;       /* Adds space between header and timer */
+    justify-content: center; 
+    align-items: center;     
+    padding-top: 50px;  
 }
 
-/* Timer Container Styling */
 .timer-container {
-    background-color: rgba(0, 0, 0, 0.7); /* Dark, semi-transparent background */
-    backdrop-filter: blur(5px);         /* Optional: nice blur effect */
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);       
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(240, 24, 171, 0.5); /* Glowing shadow to match links */
+    box-shadow: 0 0 20px rgba(240, 24, 171, 0.5); 
     text-align: center;
     max-width: 450px;
 }
@@ -118,17 +104,15 @@ body
     font-size: 1.8em;
 }
 
-/* Time Display Styling */
 .time-display {
     font-size: 5.5em;
     font-weight: bold;
-    color: rgb(240, 24, 171); /* Pink color from your hover style */
+    color: rgb(240, 24, 171);
     margin-bottom: 30px;
     padding: 10px 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Controls (Buttons) Styling */
 .controls {
     display: flex;
     justify-content: center;
@@ -147,22 +131,20 @@ body
     font-weight: bold;
 }
 
-/* Individual Button Colors */
 .control-btn.start {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 .control-btn.pause {
-    background-color: #ff9800; /* Orange */
+    background-color: #ff9800; 
 }
 .control-btn.reset {
-    background-color: #f44336; /* Red */
+    background-color: #f44336; 
 }
 .control-btn:disabled {
     background-color: #555;
     cursor: not-allowed;
 }
 
-/* Mode Selection Styling (Study/Break buttons) */
 .mode-select {
     display: flex;
     justify-content: center;
@@ -184,7 +166,68 @@ body
 }
 
 .mode-btn.active {
-    background-color: rgb(240, 24, 171); /* Highlight active mode */
+    background-color: rgb(240, 24, 171); 
     border-color: rgb(240, 24, 171);
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .middle {
+        justify-content: flex-start; 
+        overflow-x: auto; 
+        padding: 0 10px; 
+    }
+
+    .middle ul {
+        flex-wrap: nowrap; 
+        gap: 1.5rem; 
+        padding-bottom: 5px; 
+    }
+    
+    .middle a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    
+    .main-content {
+        padding-top: 20px; 
+        
+    }
+
+    .timer-container {
+        max-width: 95%; 
+        padding: 20px 15px;
+    }
+
+    .timer-container h2 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+
+    .time-display {
+        font-size: 4em;
+        margin-bottom: 20px;
+    }
+
+    .controls {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .control-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+   
+    .mode-select {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .mode-btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        border-radius: 5px; 
+    }
 }
