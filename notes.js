@@ -1,52 +1,55 @@
+// Quand la page se charge, on affiche les notes déjà sauvegardées
 window.onload = function () {
-  loadNotes();
+  afficherNotes();
 };
 
-function saveNote() {
-  const noteText = document.getElementById("noteInput").value.trim();
-  if (noteText === "") return;
+// Fonction pour sauvegarder une nouvelle note
+function sauvegarderNote() {
+  const zoneDeTexte = document.getElementById("noteInput");
+  const texteNote = zoneDeTexte.value.trim();
 
+  // Si la note est vide, on ne fait rien
+  if (texteNote === "") return;
+
+  // On récupère les notes existantes ou on crée une liste vide
   let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  notes.push(noteText);
+
+  // On ajoute la nouvelle note
+  notes.push(texteNote);
+
+  // On sauvegarde la liste mise à jour dans le stockage local
   localStorage.setItem("notes", JSON.stringify(notes));
 
-  document.getElementById("noteInput").value = "";
-  loadNotes();
+  // On vide la zone de texte
+  zoneDeTexte.value = "";
+
+  // On met à jour l'affichage
+  afficherNotes();
 }
 
-function loadNotes() {
-  const noteList = document.getElementById("noteList");
-  const noteCount = document.getElementById("noteCount");
-  noteList.innerHTML = "";
+// Fonction pour afficher toutes les notes sauvegardées
+function afficherNotes() {
+  const listeNotes = document.getElementById("noteList");
+  const compteur = document.getElementById("noteCount");
 
+  // On vide la liste actuelle
+  listeNotes.innerHTML = "";
+
+  // On récupère les notes depuis le stockage local
   let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
+  // Si aucune note, on affiche un message
   if (notes.length === 0) {
-    noteList.innerHTML = "<li>Aucune note pour le moment<br><em>Créez votre première note !</em></li>";
+    listeNotes.innerHTML = "<li>Aucune note pour le moment<br><em>Créez votre première note !</em></li>";
   } else {
-    notes.forEach((note, index) => {
-      const li = document.createElement("li");
-
-      const noteText = document.createElement("span");
-      noteText.textContent = note;
-
-      const deleteBtn = document.createElement("button");
-      deleteBtn.textContent = "🗑 Supprimer";
-      deleteBtn.className = "delete-btn";
-      deleteBtn.onclick = () => deleteNote(index);
-
-      li.appendChild(noteText);
-      li.appendChild(deleteBtn);
-      noteList.appendChild(li);
+    // Sinon, on affiche chaque note dans une liste
+    notes.forEach((note) => {
+      const item = document.createElement("li");
+      item.textContent = note;
+      listeNotes.appendChild(item);
     });
   }
 
-  noteCount.textContent = notes.length;
-}
-
-function deleteNote(index) {
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  notes.splice(index, 1);
-  localStorage.setItem("notes", JSON.stringify(notes));
-  loadNotes();
+  // On met à jour le compteur de notes
+  compteur.textContent = notes.length;
 }
