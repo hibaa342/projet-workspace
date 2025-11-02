@@ -1,16 +1,6 @@
 *{
     font-family:Arial, Helvetica, sans-serif;
 }
-
-
-.literata-<uniquifier> {
-  font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-
 /* background on the page itself */
 body {
 
@@ -18,7 +8,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   background-image: url('./assets/images/background_img.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -27,24 +16,6 @@ body {
   background-color: #000;       /* fallback */
 }
 
-
-/* 
-body
-{
-    background-color: rgb(6, 2, 40);
-    margin: 0%;
-    padding:0%;
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover;      /* Make image cover the whole screen */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;/* Remove repeats */
-    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
-    height: 100vh;          
-} */
 
 .back_header
 {
@@ -89,4 +60,61 @@ body
     color: rgb(240, 24, 171);
     transition: 0.4s ease-in-out;
     cursor: pointer;
+}
+.home
+{
+    display: flex;
+    justify-content: space-around;
+ margin-top: 8rem;
+    
+}
+.pic
+{
+  height: 220px;
+  width: 220px;
+  background: #000;
+  border-radius:50%;
+}
+.pic img
+{
+  height: 220px;
+  width: 220px;
+  border-radius:50%;
+}
+::placeholder
+{
+    color: rgb(199, 31, 87);
+    font-family:  "Days One", sans-serif;
+} 
+.d1 input , .d2  input , .d3 input
+{
+   width: 220px;     /* Largeur */
+  height: 20px;     /* Hauteur */
+  font-size: 16px;  /* Taille du texte */
+  padding: 8px;     /* Espace intérieur */
+  border-radius: 30px; /* Coins arrondis */
+  border: 4.5px solid #caa0c4; /* Bordure */
+}
+.d2 input , .d3 input {
+  margin-top: 50px;
+   /* Espace entre la 1ère et la 2e ligne */
+}
+.d1 input, .d2 input, .d3 input {
+  margin-right: 40px; /* espace entre prénom et nom */
+}
+
+.button1 button {
+  background: rgb(90, 4, 61);
+  color: white;
+  padding: 10px 20px;
+ border: none;
+ cursor: pointer;
+ margin-top: 2rem;
+ margin-left: 30rem;
+ border-radius: 10%;
+}
+
+.button1 button:hover {
+  background-color: #ff85c1;
+  
 }

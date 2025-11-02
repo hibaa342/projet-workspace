@@ -1,5 +1,19 @@
-*{
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(20, 5, 50);
+    background-image: url('./assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 
@@ -10,62 +24,23 @@
   font-style: normal;
 }
 
-
-/* background on the page itself */
-body {
-
-    height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  background-image: url('./assets/images/background_img.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; /* stays put when scrolling */
-  background-color: #000;       /* fallback */
-}
-
-
-/* 
-body
-{
-    background-color: rgb(6, 2, 40);
-    margin: 0%;
-    padding:0%;
-    box-sizing: border-box;
-
-    margin: 0;
-    padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover;      /* Make image cover the whole screen */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;/* Remove repeats */
-    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
-    height: 100vh;          
-} */
-
-.back_header
-{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.middle
-{
+/* ===== MENU ===== */
+.middle {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
-.middle ul
-{
+.middle ul {
     display: flex;
     gap: 5rem;
+}
+
+.middle a {
+    color: #d9b3ff;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
 }
 .middle a 
 {
@@ -74,9 +49,43 @@ body
     font-weight: bold;
     
     list-style: none;
+
     text-decoration: none;
+    transition: 0.3s ease;
+}
+.middle a:hover {
+    color: #ff66c4;
+    transform: scale(1.1);
+}
 
+/* ===== CONTAINER ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background: linear-gradient(135deg, #6a1b9a, #8e24aa, #ba68c8);
+    border-radius: 16px;
+    padding: 36px;
+    margin: 60px auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
 
+/* ===== TITLE ===== */
+.top {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 24px;
+}
+.top h1 {
+    font-family: 'Lobster Two', cursive;
+    margin: 0;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    color: #ffe6ff;
+}
+.top .sub {
+    color: #f8c6f8;
+    margin-top: 8px;
+    font-size: 1.3rem;
 }
 .middle li
 {
@@ -84,9 +93,137 @@ body
 }
 
 
-.middle a:hover
-{
-    color: rgb(240, 24, 171);
-    transition: 0.4s ease-in-out;
+/* ===== TABLE ===== */
+table.edt {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 12px;
+    table-layout: fixed;
+}
+
+/* Table header */
+table.edt thead th {
+    background: #f0bcf0;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #4a0072;
+}
+
+/* Table cells */
+table.edt td {
+    padding: 16px;
+    border-radius: 10px;
+    vertical-align: middle;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 1.1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    color: #3a004d;
+}
+table.edt td:hover {
+    background-color: #f48fb1;
+    transform: scale(1.05);
+}
+
+/* Pastel color palette */
+.blue   { background: #d1c4e9; }
+.pink   { background: #f8bbd0; }
+.purple { background: #e1bee7; }
+.yellow { background: #fff9c4; }
+
+/* Hour column */
+table.edt tbody td:first-child {
+    font-weight: 700;
+    width: 150px;
+    background: transparent;
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+/* Small text inside cells */
+table.edt small {
+    display: block;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #6a1b9a;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+    .container { padding: 18px; }
+    table.edt thead { display: none; }
+    table.edt, table.edt tbody, table.edt tr, table.edt td { display: block; width: 100%; }
+    table.edt tr { margin-bottom: 16px; }
+    table.edt td { padding: 14px; }
+    table.edt tbody td:first-child {
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+    }
+}
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatTitle {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== APPLY EFFECTS ===== */
+.container {
+    animation: fadeIn 1.2s ease-out both;
+}
+
+.top h1 {
+    animation: floatTitle 3s ease-in-out infinite;
+}
+
+/* Table cell hover glow */
+table.edt td:hover {
+    background-color: #e84697;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(242, 186, 242, 0.788);
+}
+
+/* Smooth table appearance */
+table.edt {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+.middle {
+    width: 100%;
+    margin-top: 10px;
+    /* Supprime le défilement */
+    overflow-x: hidden; 
+    padding: 0;
+}
+
+.middle ul {
+    /* Utilise toute la largeur */
+    width: 100%; 
+    /* Répartit l'espace maximum entre les liens */
+    justify-content: space-between; 
+    /* Supprime tout espacement fixe */
+    gap: 0; 
+    /* Assure que les éléments ne débordent pas en essayant de s'aligner */
+    flex-wrap: nowrap; 
+}
+
+.middle a {
+    /* Police minuscule pour tout faire tenir */
+    font-size: 12px; 
+    /* Padding très réduit */
+    padding: 5px 1px;
+    /* Force le texte à ne pas s'enrouler si le mot est coupé */
+    white-space: nowrap; 
 }

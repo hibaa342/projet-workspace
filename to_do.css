@@ -1,92 +1,255 @@
-*{
-    font-family:Arial, Helvetica, sans-serif;
+/* ===== Fonts ===== */
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 
 .literata-<uniquifier> {
-  font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+    font-family: "Literata", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
-
-/* background on the page itself */
+/* ===== BODY ===== */
 body {
-
     height: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  background-image: url('./assets/images/background_img.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; /* stays put when scrolling */
-  background-color: #000;       /* fallback */
-}
-
-
-/* 
-body
-{
-    background-color: rgb(6, 2, 40);
-    margin: 0%;
-    padding:0%;
-    box-sizing: border-box;
-
     margin: 0;
     padding: 0;
-    background-image: url('your-image.jpg'); /* Replace with your image path */
-    background-size: cover;      /* Make image cover the whole screen */
-    background-position: center; /* Keep it centered */
-    background-repeat: no-repeat;/* Remove repeats */
-    background-attachment: fixed;/* Keeps it fixed and unmoving when scrolling */
-    height: 100vh;          
-} */
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
 
-.back_header
-{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    background-image: url('./assets/images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 15px;
 }
 
-.middle
-{
+/* ===== MENU ===== */
+.middle {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
-.middle ul
-{
+
+.middle ul {
     display: flex;
     gap: 5rem;
 }
-.middle a 
-{
-    color: rgb(213, 213, 223);
+
+.middle li {
+    list-style: none;
+}
+
+.middle a {
+    color: rgb(118, 118, 152);
     font-size: 20px;
     font-weight: bold;
-    
-    list-style: none;
+    font-style: italic;
+    font-variant: small-caps;
     text-decoration: none;
-
-
-}
-.middle li
-{
-    list-style: none;
+    transition: color 0.4s ease, transform 0.3s ease;
 }
 
-
-.middle a:hover
-{
+.middle a:hover {
     color: rgb(240, 24, 171);
-    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
     cursor: pointer;
+}
+/* ===== Titre To Do List avec animation ===== */
+.title {
+    background-color: #c4a5ff;
+    color: #000;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-family: "Lobster Two", sans-serif;
+
+    opacity: 0;
+    animation: titleFade 1s ease-out forwards;
+}
+
+.title::after {
+    content: "🌸";
+    position: absolute;
+    right: -25px;
+    top: 0;
+}
+
+@keyframes titleFade {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Container To Do List avec animation ===== */
+.todo-container {
+    background-color: #d8b4fe;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    animation: containerFade 1s ease-out forwards;
+    animation-delay: 0.3s; /* démarre après le titre */
+}
+
+@keyframes containerFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Zone d'ajout de tâche avec animation ===== */
+.add-task {
+    display: flex;
+    margin-top: 15px;
+    gap: 10px;
+
+    opacity: 0;
+    animation: addTaskFade 1s ease-out forwards;
+    animation-delay: 0.6s; /* démarre après le container */
+}
+
+.add-task input[type="text"] {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    font-size: 1rem;
+}
+
+.add-task button {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: #a855f7;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-task button:hover {
+    background-color: #9333ea;
+}
+
+@keyframes addTaskFade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 600px) {
+    /* ... règles To Do List déjà présentes ... */
+
+    /* ADDITION IMMÉDIATE : Correction du Menu */
+    .middle ul {
+        gap: 1.5rem; 
+        font-size: 16px; 
+        width: 100%; 
+        justify-content: space-around;
+    }
+
+    /* ... le reste de vos règles de To Do List (qui étaient déjà là) ... */
+}
+
+/* ===== Liste To Do ===== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgba(0,0,0,0.3);
+    padding-bottom: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #a855f7;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+/* ===== FORMAT MOBILE ===== */
+@media (max-width: 600px) {
+    /* --- CORRECTION FINALE du Menu (Horizontal COMPACT) --- */
+    .middle ul {
+        /* Utilise 100% de la largeur du parent (.middle) */
+        width: 100%; 
+        
+        /* Supprime tout padding ou margin interne qui pourrait causer le débordement */
+        padding: 0 5px; 
+        margin: 0;
+        
+        /* Distribue l'espace vide MAXIMUM entre les liens */
+        justify-content: space-around; 
+        
+        /* Supprime l'espacement fixe (gap: 0.8rem) pour laisser space-around faire le travail */
+        gap: 0;
+    }
+
+    .middle a {
+        /* MODIFIÉ : Police ultra-petite */
+        font-size: 11px; 
+        /* Ajoute un padding horizontal minuscule pour l'accessibilité */
+        padding: 5px 2px;
+    }
+
+    /* --- Adaptation du Conteneur To Do List --- */
+    .todo-container {
+        width: 90%; 
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    /* --- Adaptation des Éléments Internes de la To Do List --- */
+    .title {
+        font-size: 1.2rem; 
+        padding: 15px 25px;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    /* Le formulaire d'ajout reste en mode colonne pour l'ergonomie (c'est mieux) */
+    .add-task {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .add-task input[type="text"],
+    .add-task button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
 }
