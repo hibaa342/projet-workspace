@@ -95,16 +95,14 @@ textarea {
   height: 150px;
   padding: 5px;
   font-size: 16px;
-  margin-bottom: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  resize: none;
+ 
 }
 
 button {
-  display: block;
-  margin: 0 auto 20px;
-  padding: 10px 20px;
+  margin-left: 15rem;
+  padding: 10px 30px;
   font-size: 16px;
   background-color: #4CAF50;
   color: white;
@@ -112,7 +110,6 @@ button {
   border-radius: 6px;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #45a049;
 }
