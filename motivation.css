@@ -1,6 +1,7 @@
 *{
     font-family:Arial, Helvetica, sans-serif;
 }
+
 body {
 
     height: 100%;
@@ -223,4 +224,8 @@ body {
   #navbar.nav-open ul {
     display: flex !important;
   }
+}
+
+body.nav-open {
+  overflow: hidden;
 }

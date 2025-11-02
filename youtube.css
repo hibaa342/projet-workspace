@@ -26,7 +26,6 @@ body {
   background-attachment: fixed; /* stays put when scrolling */
   background-color: #000;       /* fallback */
 
-  
 }
 
 .back_header
@@ -188,7 +187,8 @@ body {
     background-size: cover;
 }
 
-/* --- Responsive mobile (<=500px) --- */
+
+
 @media screen and (max-width: 500px) {
   body {
     padding: 10px;
@@ -357,4 +357,8 @@ body {
   #navbar.nav-open ul {
     display: flex !important;
   }
+}
+
+body.nav-open {
+  overflow: hidden;
 }
