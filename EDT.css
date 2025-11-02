@@ -200,3 +200,30 @@ table.edt {
     animation: fadeIn 1.5s ease-out forwards;
     animation-delay: 0.3s;
 }
+.middle {
+    width: 100%;
+    margin-top: 10px;
+    /* Supprime le défilement */
+    overflow-x: hidden; 
+    padding: 0;
+}
+
+.middle ul {
+    /* Utilise toute la largeur */
+    width: 100%; 
+    /* Répartit l'espace maximum entre les liens */
+    justify-content: space-between; 
+    /* Supprime tout espacement fixe */
+    gap: 0; 
+    /* Assure que les éléments ne débordent pas en essayant de s'aligner */
+    flex-wrap: nowrap; 
+}
+
+.middle a {
+    /* Police minuscule pour tout faire tenir */
+    font-size: 12px; 
+    /* Padding très réduit */
+    padding: 5px 1px;
+    /* Force le texte à ne pas s'enrouler si le mot est coupé */
+    white-space: nowrap; 
+}
