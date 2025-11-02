@@ -132,3 +132,22 @@ body {
   box-shadow: 0 0 15px #ff9ad5; /* effet de lumière autour */
   background-color: #fff0fa; /* fond plus clair */
 }
+.button1 button {
+  background-color: #ff69b4; /* rose doux */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 80%;
+}
+
+.button1 button:hover {
+  background-color: #ff85c1; /* rose plus clair au survol */
+  transform: scale(1.05); /* effet zoom léger */
+}

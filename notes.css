@@ -96,11 +96,12 @@ body {
 }
 
 
+
 .container {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
-  background-color: rgb(228, 158, 213);
+  background-color: rgb(255, 231, 246);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -113,7 +114,7 @@ h1, h2 {
 textarea {
   width: 100%;
   height: 150px;
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   margin-bottom: 10px;
   border-radius: 6px;
@@ -141,37 +142,5 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-ul li button {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 14px;
-}
-.delete-btn {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 10px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.delete-btn:hover {
-  background-color: #d32f2f;
-}
-
-
-
-
-
-
- 
-
-
-
 
 
