@@ -1,52 +1,27 @@
-window.onload = function () {
-  loadNotes();
-};
+let notes = [];
 
-function saveNote() {
-  const noteText = document.getElementById("noteInput").value.trim();
-  if (noteText === "") return;
+function sauvegarderNote() {
+  const zoneDeTexte = document.getElementById("noteInput");
+  const texteNote = zoneDeTexte.value.trim();
+  if (texteNote === "") return;
 
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  notes.push(noteText);
-  localStorage.setItem("notes", JSON.stringify(notes));
-
-  document.getElementById("noteInput").value = "";
-  loadNotes();
+  notes.push(texteNote);
+  zoneDeTexte.value = "";
+  afficherNotes();
 }
 
-function loadNotes() {
-  const noteList = document.getElementById("noteList");
-  const noteCount = document.getElementById("noteCount");
-  noteList.innerHTML = "";
-
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+function afficherNotes() {
+  const listeNotes = document.getElementById("noteList");
+  listeNotes.innerHTML = "";
 
   if (notes.length === 0) {
-    noteList.innerHTML = "<li>Aucune note pour le moment<br><em>Créez votre première note !</em></li>";
+    listeNotes.innerHTML = "<li>Aucune note pour le moment<br><em>Créez votre première note !</em></li>";
   } else {
-    notes.forEach((note, index) => {
-      const li = document.createElement("li");
-
-      const noteText = document.createElement("span");
-      noteText.textContent = note;
-
-      const deleteBtn = document.createElement("button");
-      deleteBtn.textContent = "🗑 Supprimer";
-      deleteBtn.className = "delete-btn";
-      deleteBtn.onclick = () => deleteNote(index);
-
-      li.appendChild(noteText);
-      li.appendChild(deleteBtn);
-      noteList.appendChild(li);
+    notes.forEach((note) => {
+      const item = document.createElement("li");
+      item.textContent = note;
+      listeNotes.appendChild(item);
     });
   }
-
-  noteCount.textContent = notes.length;
 }
 
-function deleteNote(index) {
-  let notes = JSON.parse(localStorage.getItem("notes")) || [];
-  notes.splice(index, 1);
-  localStorage.setItem("notes", JSON.stringify(notes));
-  loadNotes();
-}

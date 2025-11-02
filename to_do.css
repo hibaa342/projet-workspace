@@ -151,6 +151,19 @@ body {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
+@media (max-width: 600px) {
+    /* ... règles To Do List déjà présentes ... */
+
+    /* ADDITION IMMÉDIATE : Correction du Menu */
+    .middle ul {
+        gap: 1.5rem; 
+        font-size: 16px; 
+        width: 100%; 
+        justify-content: space-around;
+    }
+
+    /* ... le reste de vos règles de To Do List (qui étaient déjà là) ... */
+}
 
 /* ===== Liste To Do ===== */
 ul {
@@ -182,4 +195,61 @@ input[type="checkbox"] {
 
 li:last-child {
     border-bottom: none;
+}
+/* ===== FORMAT MOBILE ===== */
+@media (max-width: 600px) {
+    /* --- CORRECTION FINALE du Menu (Horizontal COMPACT) --- */
+    .middle ul {
+        /* Utilise 100% de la largeur du parent (.middle) */
+        width: 100%; 
+        
+        /* Supprime tout padding ou margin interne qui pourrait causer le débordement */
+        padding: 0 5px; 
+        margin: 0;
+        
+        /* Distribue l'espace vide MAXIMUM entre les liens */
+        justify-content: space-around; 
+        
+        /* Supprime l'espacement fixe (gap: 0.8rem) pour laisser space-around faire le travail */
+        gap: 0;
+    }
+
+    .middle a {
+        /* MODIFIÉ : Police ultra-petite */
+        font-size: 11px; 
+        /* Ajoute un padding horizontal minuscule pour l'accessibilité */
+        padding: 5px 2px;
+    }
+
+    /* --- Adaptation du Conteneur To Do List --- */
+    .todo-container {
+        width: 90%; 
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    /* --- Adaptation des Éléments Internes de la To Do List --- */
+    .title {
+        font-size: 1.2rem; 
+        padding: 15px 25px;
+        margin-top: 30px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    /* Le formulaire d'ajout reste en mode colonne pour l'ergonomie (c'est mieux) */
+    .add-task {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .add-task input[type="text"],
+    .add-task button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
 }
