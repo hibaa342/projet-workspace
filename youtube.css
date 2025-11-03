@@ -217,14 +217,7 @@ body {
     z-index: 1000;
   }
 
-  /* hide original horizontal nav list and show mobile dropdown when open */
-  #navbar {
-    position: relative;
-  }
-
-  #navbar .middle {
-    justify-content: center;
-  }
+  
 
   #navbar ul {
     display: none;
@@ -330,7 +323,6 @@ body {
   }
 }
 
-/* --- Desktop: hide toggle and show horizontal menu --- */
 @media screen and (min-width: 501px) {
   #toggle {
     display: none;
@@ -342,7 +334,7 @@ body {
     background: none;
     padding: 0;
     flex-direction: row;
-    gap: 3rem;
+    gap: 5rem;
     box-shadow: none;
     width: auto;
     text-align: left;
@@ -358,6 +350,8 @@ body {
     display: flex !important;
   }
 }
+
+
 
 body.nav-open {
   overflow: hidden;
