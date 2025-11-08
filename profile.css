@@ -122,16 +122,18 @@ body {
 body {
         padding: 10px;
         font-size: 16px;
-        overflow-x: auto;
+        height: 100px;
+        width: 100px;
     }
 .middle ul  {
     display: flex;
+  flex-wrap: nowrap;
     justify-content: space-around;
     gap: 6rem;
 }
 .home {
      flex-direction: column;
-     margin-left: 20rem;
+     margin-left: 15rem;
      gap: 1rem;
      
   }
@@ -150,7 +152,7 @@ body {
     border: none;
     cursor: pointer;
     margin-top: 2rem;
-    margin-left: 9rem;
+    margin-left: 7rem;
     border-radius: 10%;
 }
  
