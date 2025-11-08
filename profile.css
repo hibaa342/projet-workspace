@@ -118,32 +118,39 @@ body {
   background-color: #ff85c1;
   
 }
-@media screen and (max-width:500px) {
-  
-    body {
+@media (max-width: 500px) {
+body {
         padding: 10px;
         font-size: 16px;
     }
 .middle {
     display: flex;
     justify-content: space-around;
+    gap: 2px;
 }
 .home {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 8rem;
-    gap: 20rem;
+     flex-direction: column;
+     margin-left: 34rem;
+     gap: 1rem;
+     
+  }
+    .pic, .pic img {
+    width: 300px;
+    height: 300px;
+  }
+ .d1 input, .d2 input, .d3 input {
+    margin-left: 2.5rem;
+    margin-top: 2rem;
+  }
+.button1 button {
+    background: rgb(90, 4, 61);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-left: 9rem;
+    border-radius: 10%;
 }
-.d1 input, .d2 input, .d3 input {
-    margin-right: 20px;  /*retour a gauche*/
-    margin-top : 5rem; /* pour espace de input*/
-}
-.gauche
-{
-  margin-top: 6rem;
-}
-.button1{
-  margin-top: 4rem;
-}
-
+ 
 }
