@@ -118,6 +118,28 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+@media screen and (max-width:500px) {
+  
+    body {
+        padding: 10px;
+        font-size: 16px;
+    }
+.middle {
+    display: flex;
+    justify-content: space-around;
+}
+    .container {
+        width: 400% ;
+      
+        padding: 30px;
+        margin-top: 16rem;
+        margin-left: 20rem;
 
+    }
+
+
+
+
+}
 
 

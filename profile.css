@@ -118,3 +118,32 @@ body {
   background-color: #ff85c1;
   
 }
+@media screen and (max-width:500px) {
+  
+    body {
+        padding: 10px;
+        font-size: 16px;
+    }
+.middle {
+    display: flex;
+    justify-content: space-around;
+}
+.home {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8rem;
+    gap: 20rem;
+}
+.d1 input, .d2 input, .d3 input {
+    margin-right: 20px;  /*retour a gauche*/
+    margin-top : 5rem; /* pour espace de input*/
+}
+.gauche
+{
+  margin-top: 6rem;
+}
+.button1{
+  margin-top: 4rem;
+}
+
+}
