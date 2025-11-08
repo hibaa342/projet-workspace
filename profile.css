@@ -123,14 +123,14 @@ body {
         padding: 10px;
         font-size: 16px;
     }
-.middle {
+.middle ul  {
     display: flex;
     justify-content: space-around;
-    gap: 2px;
+    gap: 6rem;
 }
 .home {
      flex-direction: column;
-     margin-left: 34rem;
+     margin-left: 20rem;
      gap: 1rem;
      
   }
