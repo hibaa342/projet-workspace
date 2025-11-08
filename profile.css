@@ -122,6 +122,7 @@ body {
 body {
         padding: 10px;
         font-size: 16px;
+        overflow: hidden;
     }
 .middle ul  {
     display: flex;
