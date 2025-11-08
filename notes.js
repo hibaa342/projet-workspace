@@ -1,5 +1,4 @@
 let notes = [];
-
 function sauvegarderNote() {
   const zoneDeTexte = document.getElementById("noteInput");
   const texteNote = zoneDeTexte.value.trim();
