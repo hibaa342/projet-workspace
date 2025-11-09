@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle.addEventListener('click', () => {
     navbar.classList.toggle('nav-open');
+    document.body.classList.toggle('nav-open');
   });
 
   // Fermer le menu quand on clique sur un lien (mobile)
