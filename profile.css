@@ -88,19 +88,18 @@ body {
 } 
 .d1 input , .d2  input , .d3 input
 {
-   width: 220px;     /* Largeur */
-  height: 20px;     /* Hauteur */
-  font-size: 16px;  /* Taille du texte */
-  padding: 8px;     /* Espace intérieur */
-  border-radius: 30px; /* Coins arrondis */
-  border: 4.5px solid #caa0c4; /* Bordure */
+   width: 220px;   
+  height: 20px;     
+  font-size: 16px;  
+  padding: 8px;    
+  border-radius: 30px; 
+  border: 4.5px solid #caa0c4; 
 }
 .d2 input , .d3 input {
   margin-top: 50px;
-   /* Espace entre la 1ère et la 2e ligne */
 }
 .d1 input, .d2 input, .d3 input {
-  margin-right: 40px; /* espace entre prénom et nom */
+  margin-right: 40px; 
 }
 
 .button1 button {
@@ -119,41 +118,59 @@ body {
   
 }
 @media (max-width: 500px) {
-body {
-        padding: 10px;
-        font-size: 16px;
-        height: 100px;
-        width: 100px;
+   body {
+        padding: 0;
+        margin: 0;
+        width: 100%; 
+        height: auto;
     }
-.middle ul  {
-    display: flex;
-  flex-wrap: nowrap;
-    justify-content: space-around;
-    gap: 6rem;
-}
-.home {
-     flex-direction: column;
-     margin-left: 15rem;
-     gap: 1rem;
-     
-  }
+    .middle ul  {
+        flex-wrap: wrap; 
+        gap: 1rem; 
+        justify-content: center; 
+        padding: 0; 
+    }
+    .middle a {
+        font-size: 16px; 
+    }
+    .home {
+        flex-direction: column; 
+        align-items: center; 
+        margin-top: 2rem;
+        margin-left: 0; 
+        gap: 2rem; 
+    }
+    
     .pic, .pic img {
-    width: 300px;
-    height: 300px;
+        width: 150px; 
+        height: 150px;
+    }
+    .droite {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .d1, .d2, .d3 {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+        margin-top: 10px;
+    }
+    .d1 input, .d2 input, .d3 input {
+        width: 80%; 
+        margin: 10px 0; 
+    }  
+    .button1 {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .button1 button {
+        margin-left: 0; 
+        font-size: 18px; 
+    }
+    
   }
- .d1 input, .d2 input, .d3 input {
-    margin-left: 2.5rem;
-    margin-top: 2rem;
-  }
-.button1 button {
-    background: rgb(90, 4, 61);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 2rem;
-    margin-left: 7rem;
-    border-radius: 10%;
-}
- 
-}
