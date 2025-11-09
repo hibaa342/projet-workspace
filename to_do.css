@@ -1,45 +1,42 @@
-/* ===== Fonts ===== */
+/* ===== Fonts and Global Resets ===== */
 * {
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.literata-<uniquifier> {
-    font-family: "Literata", serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-}
-
-/* ===== BODY ===== */
-body {
-    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
 
+/*BODY */
+body {
     background-image: url('./assets/images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    background-color: #000;
-
+    background-color: #000; /* Assure un fond noir si l'image ne charge pas */
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    padding-top: 15px;
+    padding-top: 15px; /* Espace pour le header sur desktop */
 }
 
-/* ===== MENU ===== */
+/* ============================ */
+/* ===== MENU DE NAVIGATION (Desktop/Default) ===== */
+/* ============================ */
+
+/* 🚫 Masque le bouton hamburger par défaut sur Desktop */
+#toggle {
+    display: none;
+}
+
 .middle {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
 .middle ul {
     display: flex;
     gap: 5rem;
@@ -50,21 +47,25 @@ body {
 }
 
 .middle a {
-    color: rgb(118, 118, 152);
+    color: rgb(213, 213, 223);
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
     font-variant: small-caps;
     text-decoration: none;
-    transition: color 0.4s ease, transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .middle a:hover {
-    color: rgb(240, 24, 171);
+    color: #ff66c4;
     transform: scale(1.1);
-    cursor: pointer;
 }
-/* ===== Titre To Do List avec animation ===== */
+
+/* ============================ */
+/* ===== TO DO LIST STYLES (Animations & Containers) ===== */
+/* ============================ */
+
+/*Titre To Do List avec animation */
 .title {
     background-color: #c4a5ff;
     color: #000;
@@ -82,19 +83,14 @@ body {
     animation: titleFade 1s ease-out forwards;
 }
 
-.title::after {
-    content: "🌸";
-    position: absolute;
-    right: -25px;
-    top: 0;
-}
+
 
 @keyframes titleFade {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Container To Do List avec animation ===== */
+/*Container To Do List witj animation */
 .todo-container {
     background-color: #d8b4fe;
     padding: 30px;
@@ -105,7 +101,7 @@ body {
 
     opacity: 0;
     animation: containerFade 1s ease-out forwards;
-    animation-delay: 0.3s; /* démarre après le titre */
+    animation-delay: 0.3s;
 }
 
 @keyframes containerFade {
@@ -113,7 +109,7 @@ body {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Zone d'ajout de tâche avec animation ===== */
+/*add text with animation*/
 .add-task {
     display: flex;
     margin-top: 15px;
@@ -121,7 +117,7 @@ body {
 
     opacity: 0;
     animation: addTaskFade 1s ease-out forwards;
-    animation-delay: 0.6s; /* démarre après le container */
+    animation-delay: 0.6s;
 }
 
 .add-task input[type="text"] {
@@ -150,19 +146,6 @@ body {
 @keyframes addTaskFade {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
-}
-@media (max-width: 600px) {
-    /* ... règles To Do List déjà présentes ... */
-
-    /* ADDITION IMMÉDIATE : Correction du Menu */
-    .middle ul {
-        gap: 1.5rem; 
-        font-size: 16px; 
-        width: 100%; 
-        justify-content: space-around;
-    }
-
-    /* ... le reste de vos règles de To Do List (qui étaient déjà là) ... */
 }
 
 /* ===== Liste To Do ===== */
@@ -196,60 +179,121 @@ input[type="checkbox"] {
 li:last-child {
     border-bottom: none;
 }
-/* ===== FORMAT MOBILE ===== */
-@media (max-width: 600px) {
-    /* --- CORRECTION FINALE du Menu (Horizontal COMPACT) --- */
-    .middle ul {
-        /* Utilise 100% de la largeur du parent (.middle) */
-        width: 100%; 
-        
-        /* Supprime tout padding ou margin interne qui pourrait causer le débordement */
-        padding: 0 5px; 
-        margin: 0;
-        
-        /* Distribue l'espace vide MAXIMUM entre les liens */
-        justify-content: space-around; 
-        
-        /* Supprime l'espacement fixe (gap: 0.8rem) pour laisser space-around faire le travail */
-        gap: 0;
+
+
+/* --- MOBILE (Écran <= 500px) --- */
+@media screen and (max-width: 500px) {
+    /* Positionnement du header pour le bouton absolu */
+    .header {
+        position: relative;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .middle a {
-        /* MODIFIÉ : Police ultra-petite */
-        font-size: 11px; 
-        /* Ajoute un padding horizontal minuscule pour l'accessibilité */
-        padding: 5px 2px;
+    /* ✅ Affiche le bouton hamburger uniquement sur mobile */
+    #toggle {
+        display: block;
+        font-size: 28px;
+        color: rgb(213, 213, 223);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        position: absolute; 
+        top: 14px;
+        right: 14px;
+        z-index: 1000;
     }
 
-    /* --- Adaptation du Conteneur To Do List --- */
+    /* Menu de navigation (Drop-down) */
+    #navbar ul {
+        display: none; /* Masqué par défaut */
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        /* Styles de la boîte déroulante */
+        background-color: rgba(0,0,0,0.95);
+        padding: 14px;
+        position: absolute;
+        top: 56px; /* Juste sous la barre de navigation */
+        right: 12px;
+        border-radius: 10px;
+        z-index: 999;
+        width: 220px;
+        text-align: right;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+
+    /* Affichage du menu lors du clic (JavaScript ajoute la classe nav-open) */
+    body.nav-open #navbar ul {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Styles des liens du menu mobile */
+    #navbar ul li {
+        list-style: none;
+        padding: 8px 0;
+    }
+
+    #navbar ul li a {
+        color: white;
+        font-size: 18px; 
+        text-decoration: none;
+        /* Annule les styles spécifiques desktop */
+        font-weight: normal; 
+        font-style: normal;
+        font-variant: normal;
+    }
+
+    /* * TO DO LIST : ADAPTATIONS MOBILES 
+     */
+
+    /* Conteneur de la To Do List plus petit */
     .todo-container {
-        width: 90%; 
+        width: 90%;
         padding: 20px;
         border-radius: 10px;
     }
 
-    /* --- Adaptation des Éléments Internes de la To Do List --- */
-    .title {
-        font-size: 1.2rem; 
-        padding: 15px 25px;
-        margin-top: 30px;
-        margin-bottom: 25px;
-        text-align: center;
-    }
-    
-    /* Le formulaire d'ajout reste en mode colonne pour l'ergonomie (c'est mieux) */
+    /* Réorganisation verticale du champ et du bouton d'ajout de tâche */
     .add-task {
         flex-direction: column;
         gap: 8px;
     }
+}
 
-    .add-task input[type="text"],
-    .add-task button {
-        width: 100%;
-        font-size: 1rem;
+/* --- DESKTOP (Écran >= 501px) --- */
+@media screen and (min-width: 501px) {
+    /* Confirme le masquage du bouton sur grand écran */
+    #toggle {
+        display: none;
     }
 
-    li {
-        font-size: 0.9rem;
+    /* Rétablit l'affichage horizontal du menu principal sur desktop */
+    #navbar ul {
+        display: flex !important;
+        position: static;
+        background: none;
+        padding: 0;
+        flex-direction: row;
+        gap: 5rem;
+        box-shadow: none;
+        width: auto;
+        text-align: left;
     }
+
+    #navbar ul li {
+        color: inherit;
+        font-size: 20px;
+        padding: 0;
+    }
+}
+
+/* Règle pour bloquer le scroll du body quand le menu est ouvert */
+body.nav-open {
+    overflow: hidden;
 }

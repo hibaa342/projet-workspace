@@ -18,13 +18,21 @@ body {
 
 
 .literata-<uniquifier> {
-  font-family: "Literata", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+    font-family: "Literata", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
 
-/* ===== MENU ===== */
+/* ============================ */
+/* ===== MENU DE NAVIGATION (Desktop/Default) ===== */
+/* ============================ */
+
+/* 🚫 Masque le bouton hamburger par défaut sur Desktop */
+#toggle {
+    display: none;
+}
+
 .middle {
     display: flex;
     justify-content: center;
@@ -35,30 +43,32 @@ body {
     gap: 5rem;
 }
 
-.middle a {
-    color: #d9b3ff;
-    font-size: 20px;
-    font-weight: bold;
-    font-style: italic;
-    font-variant: small-caps;
+.middle li {
+    list-style: none;
 }
-.middle a 
-{
+
+.middle a {
     color: rgb(213, 213, 223);
     font-size: 20px;
     font-weight: bold;
-    
     list-style: none;
-
     text-decoration: none;
     transition: 0.3s ease;
+    font-style: italic; /* Ajouté pour conserver le style desktop */
+    font-variant: small-caps; /* Ajouté pour conserver le style desktop */
 }
+
 .middle a:hover {
     color: #ff66c4;
     transform: scale(1.1);
 }
 
-/* ===== CONTAINER ===== */
+
+/* ============================ */
+/* ===== EMPLOI DU TEMPS STYLES ===== */
+/* ============================ */
+
+/* CONTAINER */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -67,9 +77,10 @@ body {
     padding: 36px;
     margin: 60px auto;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-out both; /* APPLIQUÉ ICI */
 }
 
-/* ===== TITLE ===== */
+/* TITLE*/
 .top {
     text-align: center;
     color: #fff;
@@ -81,24 +92,24 @@ body {
     font-size: 3.5rem;
     letter-spacing: 3px;
     color: #ffe6ff;
+    animation: floatTitle 3s ease-in-out infinite; /* APPLIQUÉ ICI */
 }
 .top .sub {
     color: #f8c6f8;
     margin-top: 8px;
     font-size: 1.3rem;
 }
-.middle li
-{
-    list-style: none;
-}
 
 
-/* ===== TABLE ===== */
+/* TABLE */
 table.edt {
     width: 100%;
     border-collapse: separate;
     border-spacing: 12px;
     table-layout: fixed;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 /* Table header */
@@ -125,8 +136,9 @@ table.edt td {
     color: #3a004d;
 }
 table.edt td:hover {
-    background-color: #f48fb1;
+    background-color: #e84697;
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(242, 186, 242, 0.788);
 }
 
 /* Pastel color palette */
@@ -152,21 +164,10 @@ table.edt small {
     color: #6a1b9a;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 720px) {
-    .container { padding: 18px; }
-    table.edt thead { display: none; }
-    table.edt, table.edt tbody, table.edt tr, table.edt td { display: block; width: 100%; }
-    table.edt tr { margin-bottom: 16px; }
-    table.edt td { padding: 14px; }
-    table.edt tbody td:first-child {
-        background: rgba(255,255,255,0.1);
-        border-radius: 8px;
-        margin-bottom: 8px;
-        font-size: 1.2rem;
-    }
-}
+/* ============================ */
 /* ===== ANIMATIONS ===== */
+/* ============================ */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -178,52 +179,137 @@ table.edt small {
     100% { transform: translateY(0); }
 }
 
-/* ===== APPLY EFFECTS ===== */
-.container {
-    animation: fadeIn 1.2s ease-out both;
+
+/* ============================ */
+/* ===== MEDIA QUERIES (RESPONSIVE) ===== */
+/* ============================ */
+
+/* --- MOBILE (Écran <= 500px) --- */
+@media screen and (max-width: 500px) {
+    /* Style de la partie supérieure du header (pour positionner le toggle) */
+    .header {
+        position: relative;
+        padding: 10px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Aligne le contenu à droite si pas de logo */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ✅ Affiche le bouton hamburger uniquement sur mobile */
+    #toggle {
+        display: block;
+        font-size: 28px;
+        color: rgb(213, 213, 223);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        position: absolute; 
+        top: 14px;
+        right: 14px;
+        z-index: 1000;
+    }
+
+    /* Menu de navigation (Drop-down) */
+    #navbar ul {
+        display: none; /* Masqué par défaut */
+        flex-direction: column;
+        gap: 0.5rem;
+        
+        /* Styles de la boîte déroulante */
+        background-color: rgba(0,0,0,0.95);
+        padding: 14px;
+        position: absolute;
+        top: 56px; 
+        right: 12px;
+        border-radius: 10px;
+        z-index: 999;
+        width: 220px;
+        text-align: right;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+
+    /* Affichage du menu lors du clic (JavaScript ajoute la classe nav-open) */
+    body.nav-open #navbar ul {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Styles des liens du menu mobile */
+    #navbar ul li {
+        list-style: none;
+        padding: 8px 0;
+    }
+
+    #navbar ul li a {
+        color: white;
+        font-size: 18px; 
+        text-decoration: none;
+        /* Rétablit les styles spécifiques au menu déroulant */
+        font-weight: normal; 
+        font-style: normal;
+        font-variant: normal;
+    }
+
+    /* --- TABLE RESPONSIVE (Code existant pour 720px ajusté à 500px si désiré) --- */
+    .container { 
+        padding: 18px; 
+    }
+    table.edt thead { 
+        display: none; 
+    }
+    table.edt, table.edt tbody, table.edt tr, table.edt td { 
+        display: block; 
+        width: 100%; 
+    }
+    table.edt tr { 
+        margin-bottom: 16px; 
+    }
+    table.edt td { 
+        padding: 14px; 
+    }
+    table.edt tbody td:first-child {
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+    }
 }
 
-.top h1 {
-    animation: floatTitle 3s ease-in-out infinite;
+/* --- DESKTOP (Écran >= 501px) --- */
+@media screen and (min-width: 501px) {
+    /* Confirme le masquage du bouton sur grand écran */
+    #toggle {
+        display: none;
+    }
+
+    /* Rétablit l'affichage horizontal du menu principal sur desktop */
+    #navbar ul {
+        display: flex !important;
+        position: static;
+        background: none;
+        padding: 0;
+        flex-direction: row;
+        gap: 5rem;
+        box-shadow: none;
+        width: auto;
+        text-align: left;
+    }
+
+    #navbar ul li {
+        color: inherit;
+        font-size: 20px;
+        padding: 0;
+    }
+    
+    /* Règle de sécurité pour le cas où la classe est toujours là */
+    #navbar.nav-open ul {
+        display: flex !important;
+    }
 }
 
-/* Table cell hover glow */
-table.edt td:hover {
-    background-color: #e84697;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(242, 186, 242, 0.788);
-}
-
-/* Smooth table appearance */
-table.edt {
-    opacity: 0;
-    animation: fadeIn 1.5s ease-out forwards;
-    animation-delay: 0.3s;
-}
-.middle {
-    width: 100%;
-    margin-top: 10px;
-    /* Supprime le défilement */
-    overflow-x: hidden; 
-    padding: 0;
-}
-
-.middle ul {
-    /* Utilise toute la largeur */
-    width: 100%; 
-    /* Répartit l'espace maximum entre les liens */
-    justify-content: space-between; 
-    /* Supprime tout espacement fixe */
-    gap: 0; 
-    /* Assure que les éléments ne débordent pas en essayant de s'aligner */
-    flex-wrap: nowrap; 
-}
-
-.middle a {
-    /* Police minuscule pour tout faire tenir */
-    font-size: 12px; 
-    /* Padding très réduit */
-    padding: 5px 1px;
-    /* Force le texte à ne pas s'enrouler si le mot est coupé */
-    white-space: nowrap; 
+/* Règle pour bloquer le scroll du body quand le menu est ouvert */
+body.nav-open {
+    overflow: hidden;
 }
