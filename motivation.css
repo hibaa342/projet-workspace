@@ -109,6 +109,7 @@ body {
   body {
     padding: 10px;
     font-size: 16px;
+    background-attachment: scroll;
   }
 
   .header {
