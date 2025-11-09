@@ -82,7 +82,7 @@ body {
   padding: 20px;
   background-color: rgb(255, 231, 246);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
 }
 
 h1, h2 {
@@ -113,38 +113,30 @@ button {
 button:hover {
   background-color: #45a049;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
 }
+
 @media screen and (max-width:500px) {
-   body {
-        padding: 0;
-        margin: 0;
-        width: 100%; 
-        height: auto;
-    }
     .middle ul  {
         flex-wrap: wrap; 
         gap: 1rem; 
         justify-content: center; 
-        padding: 0; 
     }
     .middle a {
         font-size: 16px; 
     }
 
 .container {
-        max-width: 95%; 
+        max-width: 91%; 
         width: 95%; 
         margin: 20px auto; 
         padding: 15px; 
     }
     button {
-        margin-left: 0; 
         display: block; 
-        margin: 15px auto 0 auto;
+        margin: 15px auto;
     }
 }
 
