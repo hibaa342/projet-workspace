@@ -119,27 +119,33 @@ ul {
   padding: 0;
 }
 @media screen and (max-width:500px) {
-  
-    body {
-        padding: 10px;
-        font-size: 16px;
+   body {
+        padding: 0;
+        margin: 0;
+        width: 100%; 
+        height: auto;
     }
-.middle {
-    display: flex;
-    justify-content: space-around;
-}
-    .container {
-        width: 400% ;
-      
-        padding: 30px;
-        margin-top: 16rem;
-        margin-left: 20rem;
-
+    .middle ul  {
+        flex-wrap: wrap; 
+        gap: 1rem; 
+        justify-content: center; 
+        padding: 0; 
+    }
+    .middle a {
+        font-size: 16px; 
     }
 
-
-
-
+.container {
+        max-width: 95%; 
+        width: 95%; 
+        margin: 20px auto; 
+        padding: 15px; 
+    }
+    button {
+        margin-left: 0; 
+        display: block; 
+        margin: 15px auto 0 auto;
+    }
 }
 
 
