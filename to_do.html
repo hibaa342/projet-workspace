@@ -9,11 +9,12 @@
 </head>
 <body>
     <section class="header">
+        <button id="toggle" aria-label="menu">☰</button>
+        
         <div class="logo">
-            <!-- <img src="./assets/images/workspace.png" alt="logo"> -->
-        </div>
+            </div>
 
-        <div class="middle">
+        <div class="middle" id="navbar"> 
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./study_timer.html">Study Timer</a></li>
@@ -33,40 +34,53 @@
         <ul id="task-list">
             <li>
                 <input type="checkbox">
-                <input type="text" value="..." class="task-text" />
+                <input type="text" value="Tâche exemple" class="task-text" />
             </li>
-    </div>
+        </ul> </div>
 
     <div class="add-task">
-    <input type="text" id="task-input" placeholder="Écris  ici..." />
-    <button id="add-task-btn">ADD</button>
-</div>
+        <input type="text" id="task-input" placeholder="Écris ici..." />
+        <button id="add-task-btn">ADD</button>
+    </div>
 
-<script>
-    const input = document.getElementById("task-input");
-    const button = document.getElementById("add-task-btn");
-    const taskList = document.getElementById("task-list");
+    <script>
+        // --- SÉLECTION DES ÉLÉMENTS HTML ---
+        const input = document.getElementById("task-input");
+        const button = document.getElementById("add-task-btn");
+        const taskList = document.getElementById("task-list");
 
-    function addTask(taskText) {
-        const li = document.createElement("li");
-        li.innerHTML = `<input type="checkbox"> <input type="text" value="${taskText}" class="task-text" />`;
-        taskList.appendChild(li);
-    }
+        const toggleButton = document.getElementById('toggle');
+        const body = document.body;
 
-    button.addEventListener("click", function() {
-        const taskText = input.value.trim();
-        if(taskText !== "") {
-            addTask(taskText);
-            input.value = ""; // vide le champ
+        // --- LOGIQUE DE LA TO DO LIST ---
+        function addTask(taskText) {
+            const li = document.createElement("li");
+            li.innerHTML = `<input type="checkbox"> <input type="text" value="${taskText}" class="task-text" />`;
+            taskList.appendChild(li);
         }
-    });
 
-    input.addEventListener("keypress", function(e) {
-        if(e.key === "Enter") {
-            button.click();
+        button.addEventListener("click", function() {
+            const taskText = input.value.trim();
+            if(taskText !== "") {
+                addTask(taskText);
+                input.value = ""; // vide le champ
+            }
+        });
+
+        input.addEventListener("keypress", function(e) {
+            if(e.key === "Enter") {
+                button.click();
+            }
+        });
+        
+        // --- LOGIQUE DU MENU MOBILE (Responsive) ---
+        if (toggleButton) {
+            toggleButton.addEventListener('click', function() {
+                // Bascule la classe CSS 'nav-open' sur le body
+                body.classList.toggle('nav-open');
+            });
         }
-    });
-</script>
+    </script>
 
 </body>
 </html>
