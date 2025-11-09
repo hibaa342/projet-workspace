@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggle.addEventListener('click', () => {
     navbar.classList.toggle('nav-open');
+    document.body.classList.toggle('nav-open');
   });
 
   navbar.querySelectorAll('a').forEach(a => {

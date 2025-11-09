@@ -329,7 +329,7 @@ body {
   }
 
   #navbar ul {
-    display: flex !important;
+    display: flex ;
     position: static;
     background: none;
     padding: 0;
@@ -347,7 +347,7 @@ body {
   }
 
   #navbar.nav-open ul {
-    display: flex !important;
+    display: flex ;
   }
 }
 

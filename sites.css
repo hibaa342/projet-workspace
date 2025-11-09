@@ -250,7 +250,7 @@ h1
   }
 
   #navbar ul {
-    display: flex !important;
+    display: flex ;
     position: static;
     background: none;
     padding: 0;
@@ -268,7 +268,7 @@ h1
   }
 
   #navbar.nav-open ul {
-    display: flex !important;
+    display: flex ;
   }
 }
 
